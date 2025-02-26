@@ -7,10 +7,10 @@
 <h1>Saya</h1>
 <h2>Perkenalan</h2>
 <p>Perkenalkan, nama saya sisca amelia putri Ini adalah
-<l>https://library.usu.ac.id/</i>
+<l>homepage/</i>
 <b>pertama</b> saya, karena saya baru belajar tentang
 cara membuat <b><i>homepage</l></b>.
 </p>
 </body>
-</html> <!-- akhir dokumen HTML -->
+</html> <!-- https://library.usu.ac.id/ -->
 HIRD-Perpustakaan dan Sains Informasi USU
