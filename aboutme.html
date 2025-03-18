@@ -1,98 +1,149 @@
 <!DOCTYPE html>
-
-<html lang="en">
-
+<html lang="id">
 <head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>About Me</title>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sisca Library</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradasi ungu dan biru */
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        header, footer {
+            background-color: #3a3a3a; /* Warna abu-abu gelap untuk header */
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+        }
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        nav a:hover {
+            background-color: #facc15;
+            color: black;
+        }
+        .container {
+            width: 60%;
+            background-color: rgba(255, 255, 255, 0.2);
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+        h2 {
+            text-align: center;
+            color: #facc15; /* Warna kuning terang untuk heading */
+        }
+        p {
+            text-align: justify;
+            color: #333;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #6a11cb; /* Sesuaikan dengan gradasi warna */
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #2575fc; /* Sesuaikan dengan warna biru gradasi */
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: rgba(255, 255, 255, 0.2); /* Warna transparan dengan efek gradasi */
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .button-container a {
+            background-color: #15803d;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .button-container a:hover {
+            background-color: #facc15;
+            color: black;
+        }
+    </style>
 </head>
-
 <body>
 
-<h1>Tentang Saya</h1>
+<header>
+    <h1>Sisca Library</h1>
+    <nav>
+        <a href="index.html">Beranda</a>
+        <a href="about.html">Seputar</a>
+        <a href="contact.html">Tanggapan</a>
+    </nav>
+</header>
 
-<p>halaman ini berisi Informasi tentang saya</p>
+<div class="container">
+    <h2>Tentang Kami</h2>
+    <p>Sissca Library adalah perpustakaan digital, solusi inovatif yang memungkinkan siapa saja untuk mengakses koleksi buku, jurnal, dan referensi ilmiah secara online tanpa terhalang oleh ruang atau waktu. Dengan keberadaan perpustakaan digital, pembelajaran dan literasi menjadi lebih mudah diakses, inklusif, dan efisien.</p>
+    <h3>Informasi Pribadi</h3>
+    <table>
+        <tr>
+            <th>Nama</th>
+            <td>Sisca Amelia Putri</td>
+        </tr>
+        <tr>
+            <th>NIM</th>
+            <td>220709xxx</td>
+        </tr>
+        <tr>
+            <th>Program Studi</th>
+            <td>Perpustakaan dan Sains Informasi</td>
+        </tr>
+        <tr>
+            <th>Fakultas</th>
+            <td>Fakultas Ilmu Budaya</td>
+        </tr>
+                  <th>Universitas</th>
+            <td>Universitas Sumatera</td>
+        <tr>
+            <th>Semester</th>
+            <td>6</td>
+        </tr>
+        <tr>
+            <th>Tahun Ajaran</th>
+            <td>Genap 2024/2025</td>
+        </tr>
+    </table>
+</div>
 
-<table border="1" cellspacing="0" cellpadding="5">
+<footer>
+    &copy; 2025 Sisca Library
+</footer>
 
-<tr>
+</body>
+</html>
 
-<!-- td tabel data -->
 
-<td><b>Nama</b></td>
-
-<td>sisca amelia putri</td>
-
-</tr>
-
-<tr>
-
-<td>NIM</td>
-
-<td>220709037</td>
-
-</tr>
-
-<tr>
-
-<td>Program Studi</td>
-
-<td>Perpustakaan dan Sains Informasi S-1</td>
-
-</tr>
-
-<tr>
-
-<td>Fakultas</td>
-
-<td>Fakultas Ilmu Budaya</td>
-<tr>
-
-<td>NIM</td>
-
-<td>220709037</td>
-
-</tr>
-
-<tr>
-
-<td>Program Studi</td>
-
-<td>Perpustakaan dan Sains Informasi S-1</td>
-
-</tr>
-
-<tr>
-
-<td>Fakultas</td>
-
-<td>Fakultas Ilmu Budaya</td>
-
-</tr>
-
-<tr>
-
-<td>Universitas</td>
-
-<td>Universitas Sumatera Utara</td>
-
-</tr>
-
-<tr>
-
-<td>No HP</td>
-
-<td>088206367386</td>
-
-</tr>
-
-<tr>
-
-<td>Alamat</td>
-
-<td>Jl.jemadi gang mawar no.3</td>
-
-</table>
