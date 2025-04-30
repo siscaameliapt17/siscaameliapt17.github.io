@@ -158,48 +158,52 @@
     setInterval(showTime, 1000); // Memperbarui setiap detik
 </script>
 
-</body>
-</html>
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Halo World</title>
-</head>
-<body>
-    <h1>Hello World!</h1>
-</body>
+    <head>
+        <title>Halo World</title>
+    </head>
+    <body>
+        <h1>Hello World!</h1>
+
+        <table border="1">
+            <tr>
+                <th>Nama</th>
+                <th>Umur</th>
+            </tr>
+            <tr>
+                <td>Budi</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>Siti</td>
+                <td>21</td>
+            </tr>
+        </table>
+
+        <a href="https://www.usu.ac.id/id" target="_blank">
+            Klik link disini untuk mengunjungi situs Universitas Sumatera Utara
+        </a>
+
+        <form action="proses.php" method="POST">
+            Nama: <input type="text" name="nama"><br>
+            Email: <input type="email" name="email"><br>
+            <input type="submit" value="Kirim">
+        </form>
+
+        <?php
+            $host = "localhost";
+            $user = "root";
+            $pass = "";
+            $db   = "nama_database";
+
+            $conn = mysqli_connect($host, $user, $pass, $db);
+
+            if ($conn) {
+                echo "Koneksi berhasil!";
+            } else {
+                echo "Koneksi gagal: " . mysqli_connect_error();
+            }
+        ?>
+    </body>
 </html>
-<table border="1">
-    <tr>
-        <th>Nama</th>
-        <th>Umur</th>
-    </tr>
-    <tr>
-        <td>Budi</td>
-        <td>20</td>
-    </tr>
-    <tr>
-        <td>Siti</td>
-        <td>21</td>
-    </tr>
-</table>
-<a href="https://www.usu.ac.id/id" target="_blank">Klik link disini untuk mengunjungi situs Universitas Sumatera Utara</a>
-<form action="proses.php" method="POST">
-    Nama: <input type="text" name="nama"><br>
-    Email: <input type="email" name="email"><br>
-    <input type="submit" value="Kirim">
-</form>
-<?php
-$host = "localhost";
-$user = "root";
-$pass = "";
-$db   = "nama_database";
-
-$conn = mysqli_connect($host, $user, $pass, $db);
-
-if ($conn) {
-    echo "Koneksi berhasil!";
-} else {
-    echo "Koneksi gagal: " . mysqli_connect_error();
-}
-?>
