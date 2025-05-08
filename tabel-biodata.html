@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tabel Biodata - Sisca Amelia Putri</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+
+      .fade-in {
+        opacity: 0;
+        animation: fadeIn 1.5s forwards;
+      }
+
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+        }
+      }
+
+      .scroll-animate {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: scrollAnim 1s ease-out forwards;
+      }
+
+      @keyframes scrollAnim {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+
+  <body
+    class="bg-gradient-to-br from-green-900 via-teal-800 to-green-900 text-gray-100 font-sans min-h-screen"
+  >
+    <section
+      class="relative w-full bg-cover bg-center bg-no-repeat py-24 px-6 fade-in"
+      style="
+        background-image: url('https://statik.tempo.co/data/2023/07/07/id_1217662/1217662_720.jpg');
+      "
+    >
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-black/70 to-black/90 z-0"
+      ></div>
+      <div class="relative z-10 max-w-4xl mx-auto text-center text-white">
+        <h1 class="text-5xl font-extrabold drop-shadow-lg mb-4">
+          Biodata Mahasiswa
+        </h1>
+        <p class="text-xl leading-relaxed text-teal-200 drop-shadow-md">
+          Informasi detail mengenai Sisca Amelia Putri
+        </p>
+      </div>
+    </section>
+
+    <div
+      class="max-w-3xl mx-auto mt-12 bg-gradient-to-r from-teal-700 to-teal-800 border border-teal-600 shadow-xl rounded-lg p-10 scroll-animate"
+    >
+      <h3
+        class="text-3xl font-semibold text-teal-100 mb-8 text-center uppercase tracking-wide"
+      >
+        Detail Pribadi
+      </h3>
+      <div class="grid grid-cols-2 gap-6">
+        <div>
+          <p class="text-lg font-medium text-teal-300">Nama:</p>
+          <p class="text-lg text-gray-100">Sisca Amelia Putri</p>
+        </div>
+        <div>
+          <p class="text-lg font-medium text-teal-300">NIM:</p>
+          <p class="text-lg text-gray-100">220709xxx</p>
+        </div>
+        <div>
+          <p class="text-lg font-medium text-teal-300">Program Studi:</p>
+          <p class="text-lg text-gray-100">Perpustakaan dan Sains Informasi</p>
+        </div>
+        <div>
+          <p class="text-lg font-medium text-teal-300">Fakultas:</p>
+          <p class="text-lg text-gray-100">Fakultas Ilmu Budaya</p>
+        </div>
+        <div>
+          <p class="text-lg font-medium text-teal-300">Universitas:</p>
+          <p class="text-lg text-gray-100">Universitas Sumatera</p>
+        </div>
+        <div>
+          <p class="text-lg font-medium text-teal-300">Semester:</p>
+          <p class="text-lg text-gray-100">6</p>
+        </div>
+        <div class="col-span-2">
+          <p class="text-lg font-medium text-teal-300">Tahun Ajaran:</p>
+          <p class="text-lg text-gray-100">Genap 2024/2025</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-12">
+      <a
+        href="Homework.html"
+        class="inline-flex items-center gap-2 bg-teal-600 text-white px-8 py-4 rounded-md hover:bg-teal-700 transition duration-300 shadow-lg text-lg font-semibold"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M7 16l-4-4m0 0l4-4m-4 4h18m-4-4h3"
+          />
+        </svg>
+        Kembali ke Daftar Tugas
+      </a>
+    </div>
+  </body>
+</html>

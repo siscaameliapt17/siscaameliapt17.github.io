@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Sisca Library</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+
+      /* Animation for fade-in */
+      .fade-in {
+        opacity: 0;
+        animation: fadeIn 1.5s forwards;
+      }
+
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+        }
+      }
+
+      /* Animation for sliding */
+      .slide-in {
+        transform: translateX(100%);
+        animation: slideIn 0.5s ease-out forwards;
+      }
+
+      @keyframes slideIn {
+        to {
+          transform: translateX(0);
+        }
+      }
+
+      /* Scroll animation */
+      .scroll-animate {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: scrollAnim 1s ease-out forwards;
+      }
+
+      @keyframes scrollAnim {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+
+  <body
+    class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300"
+  >
+    <div class="min-h-screen flex flex-col">
+      <header
+        class="sticky top-0 z-50 bg-white dark:bg-gray-900 shadow-sm border-b dark:border-gray-700"
+      >
+        <div
+          class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center fade-in"
+        >
+          <span class="text-xl font-bold text-indigo-600 dark:text-indigo-400"
+            >Sisca Library</span
+          >
+          <button
+            id="menu-btn"
+            class="md:hidden text-gray-700 dark:text-gray-200 focus:outline-none"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
+          <nav
+            id="nav-links"
+            class="hidden md:flex gap-6 font-medium text-base"
+          >
+            <a
+              href="index.html"
+              class="hover:text-indigo-600 dark:hover:text-indigo-300 transition"
+              >Home</a
+            >
+            <a
+              href="about.html"
+              class="hover:text-indigo-600 dark:hover:text-indigo-300 transition"
+              >About</a
+            >
+            <a
+              href="buku.html"
+              class="hover:text-indigo-600 dark:hover:text-indigo-300 transition"
+              >Book</a
+            >
+            <a
+              href="event.html"
+              class="hover:text-indigo-600 dark:hover:text-indigo-300 transition"
+              >Event</a
+            >
+            <a
+              href="contack.html"
+              class="hover:text-indigo-600 dark:hover:text-indigo-300 transition"
+              >Contact</a
+            >
+            <a
+              href="Homework.html"
+              class="hover:text-indigo-600 dark:hover:text-indigo-300 transition"
+              >Homework</a
+            >
+          </nav>
+        </div>
+        <div
+          id="mobile-nav"
+          class="md:hidden hidden px-6 pb-4 space-y-2 font-medium text-base"
+        >
+          <a
+            href="index.html"
+            class="block hover:text-indigo-600 dark:hover:text-indigo-300"
+            >Home</a
+          >
+          <a
+            href="about.html"
+            class="block hover:text-indigo-600 dark:hover:text-indigo-300"
+            >About</a
+          >
+          <a
+            href="buku.html"
+            class="block hover:text-indigo-600 dark:hover:text-indigo-300"
+            >Book</a
+          >
+          <a
+            href="event.html"
+            class="block hover:text-indigo-600 dark:hover:text-indigo-300"
+            >Event</a
+          >
+          <a
+            href="contack.html"
+            class="block hover:text-indigo-600 dark:hover:text-indigo-300"
+            >Contact</a
+          >
+          <a
+            href="Homework.html"
+            class="block hover:text-indigo-600 dark:hover:text-indigo-300"
+            >Homework</a
+          >
+        </div>
+      </header>
+
+      <main class="container mx-auto my-12 px-4">
+        <section class="mb-8 fade-in">
+          <div class="max-w-lg mx-auto">
+            <div class="relative">
+              <div
+                class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+              >
+                <svg
+                  class="w-5 h-5 text-gray-500 dark:text-gray-400"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </div>
+              <input
+                type="text"
+                id="book-search"
+                class="bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-10 p-2.5"
+                placeholder="Search for books..."
+              />
+            </div>
+          </div>
+        </section>
+
+        <section class="fade-in px-4 py-8">
+          <h2
+            class="text-3xl font-bold mb-8 text-center text-gray-900 dark:text-gray-100"
+          >
+            Latest Book Collection
+          </h2>
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"
+          >
+            <!-- The Little Prince -->
+            <div
+              class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-xl transition duration-300"
+            >
+              <img
+                src="https://picsum.photos/id/237/400/300"
+                alt="The Little Prince"
+                class="w-full h-48 object-cover"
+              />
+              <div class="p-4">
+                <h3
+                  class="font-semibold text-lg text-gray-900 dark:text-gray-100 mb-2"
+                >
+                  The Little Prince
+                </h3>
+                <p class="text-gray-700 dark:text-gray-300 text-sm mb-2">
+                  Antoine de Saint-Exupéry
+                </p>
+                <a
+                  href="#"
+                  class="inline-block bg-indigo-500 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-md transition duration-300"
+                  >Lihat Detail</a
+                >
+              </div>
+            </div>
+
+            <!-- Pride and Prejudice -->
+            <div
+              class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-xl transition duration-300"
+            >
+              <img
+                src="https://picsum.photos/id/1015/400/300"
+                alt="Pride and Prejudice"
+                class="w-full h-48 object-cover"
+              />
+              <div class="p-4">
+                <h3
+                  class="font-semibold text-lg text-gray-900 dark:text-gray-100 mb-2"
+                >
+                  Pride and Prejudice
+                </h3>
+                <p class="text-gray-700 dark:text-gray-300 text-sm mb-2">
+                  Jane Austen
+                </p>
+                <a
+                  href="#"
+                  class="inline-block bg-indigo-500 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-md transition duration-300"
+                  >Lihat Detail</a
+                >
+              </div>
+            </div>
+
+            <!-- To Kill a Mockingbird -->
+            <div
+              class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-xl transition duration-300"
+            >
+              <img
+                src="https://picsum.photos/id/1005/400/300"
+                alt="To Kill a Mockingbird"
+                class="w-full h-48 object-cover"
+              />
+              <div class="p-4">
+                <h3
+                  class="font-semibold text-lg text-gray-900 dark:text-gray-100 mb-2"
+                >
+                  To Kill a Mockingbird
+                </h3>
+                <p class="text-gray-700 dark:text-gray-300 text-sm mb-2">
+                  Harper Lee
+                </p>
+                <a
+                  href="#"
+                  class="inline-block bg-indigo-500 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-md transition duration-300"
+                  >Lihat Detail</a
+                >
+              </div>
+            </div>
+
+            <!-- 1984 -->
+            <div
+              class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-xl transition duration-300"
+            >
+              <img
+                src="https://picsum.photos/id/1025/400/300"
+                alt="1984"
+                class="w-full h-48 object-cover"
+              />
+              <div class="p-4">
+                <h3
+                  class="font-semibold text-lg text-gray-900 dark:text-gray-100 mb-2"
+                >
+                  1984
+                </h3>
+                <p class="text-gray-700 dark:text-gray-300 text-sm mb-2">
+                  George Orwell
+                </p>
+                <a
+                  href="#"
+                  class="inline-block bg-indigo-500 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-md transition duration-300"
+                  >Lihat Detail</a
+                >
+              </div>
+            </div>
+
+            <!-- The Great Gatsby -->
+            <div
+              class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-xl transition duration-300"
+            >
+              <img
+                src="https://picsum.photos/id/1049/400/300"
+                alt="The Great Gatsby"
+                class="w-full h-48 object-cover"
+              />
+              <div class="p-4">
+                <h3
+                  class="font-semibold text-lg text-gray-900 dark:text-gray-100 mb-2"
+                >
+                  The Great Gatsby
+                </h3>
+                <p class="text-gray-700 dark:text-gray-300 text-sm mb-2">
+                  F. Scott Fitzgerald
+                </p>
+                <a
+                  href="#"
+                  class="inline-block bg-indigo-500 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-md transition duration-300"
+                  >Lihat Detail</a
+                >
+              </div>
+            </div>
+
+            <!-- The Lord of the Rings -->
+            <div
+              class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-xl transition duration-300"
+            >
+              <img
+                src="https://picsum.photos/id/1062/400/300"
+                alt="The Lord of the Rings"
+                class="w-full h-48 object-cover"
+              />
+              <div class="p-4">
+                <h3
+                  class="font-semibold text-lg text-gray-900 dark:text-gray-100 mb-2"
+                >
+                  The Lord of the Rings
+                </h3>
+                <p class="text-gray-700 dark:text-gray-300 text-sm mb-2">
+                  J.R.R. Tolkien
+                </p>
+                <a
+                  href="#"
+                  class="inline-block bg-indigo-500 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-md transition duration-300"
+                  >Lihat Detail</a
+                >
+              </div>
+            </div>
+
+            <!-- Harry Potter and the Sorcerer's Stone -->
+            <div
+              class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-xl transition duration-300"
+            >
+              <img
+                src="https://picsum.photos/id/1035/400/300"
+                alt="Harry Potter and the Sorcerer's Stone"
+                class="w-full h-48 object-cover"
+              />
+              <div class="p-4">
+                <h3
+                  class="font-semibold text-lg text-gray-900 dark:text-gray-100 mb-2"
+                >
+                  Harry Potter and the Sorcerer's Stone
+                </h3>
+                <p class="text-gray-700 dark:text-gray-300 text-sm mb-2">
+                  J.K. Rowling
+                </p>
+                <a
+                  href="#"
+                  class="inline-block bg-indigo-500 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-md transition duration-300"
+                  >Lihat Detail</a
+                >
+              </div>
+            </div>
+
+            <!-- The Hitchhiker's Guide to the Galaxy -->
+            <div
+              class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-xl transition duration-300"
+            >
+              <img
+                src="https://picsum.photos/id/1056/400/300"
+                alt="The Hitchhiker's Guide to the Galaxy"
+                class="w-full h-48 object-cover"
+              />
+              <div class="p-4">
+                <h3
+                  class="font-semibold text-lg text-gray-900 dark:text-gray-100 mb-2"
+                >
+                  The Hitchhiker's Guide to the Galaxy
+                </h3>
+                <p class="text-gray-700 dark:text-gray-300 text-sm mb-2">
+                  Douglas Adams
+                </p>
+                <a
+                  href="#"
+                  class="inline-block bg-indigo-500 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-md transition duration-300"
+                  >Lihat Detail</a
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer
+        class="bg-indigo-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 py-4 mt-8"
+      >
+        <div
+          class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center"
+        >
+          <p class="text-xs text-center md:text-left">
+            &copy; 2024 Sisca Library. All rights reserved.
+          </p>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileNav = document.getElementById("mobile-nav");
+
+      menuBtn.addEventListener("click", () => {
+        mobileNav.classList.toggle("hidden");
+      });
+    </script>
+
+    <script>
+      const searchInput = document.getElementById("book-search");
+      const books = document.querySelectorAll("section.fade-in .grid > div");
+
+      searchInput.addEventListener("input", function () {
+        const query = this.value.toLowerCase();
+
+        books.forEach((book) => {
+          const title = book.querySelector("h3").textContent.toLowerCase();
+          if (title.includes(query)) {
+            book.style.display = "";
+          } else {
+            book.style.display = "none";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

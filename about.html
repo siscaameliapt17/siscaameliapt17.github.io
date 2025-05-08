@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Sisca Library</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: "Inter", sans-serif;
+    }
+
+    /* Animation for fade-in */
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 1.5s forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Animation for sliding */
+    .slide-in {
+      transform: translateX(100%);
+      animation: slideIn 0.5s ease-out forwards;
+    }
+
+    @keyframes slideIn {
+      to {
+        transform: translateX(0);
+      }
+    }
+
+    /* Scroll animation */
+    .scroll-animate {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: scrollAnim 1s ease-out forwards;
+    }
+
+    @keyframes scrollAnim {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+  <div class="min-h-screen flex flex-col">
+    <!-- Navbar -->
+    <header class="sticky top-0 z-50 bg-white dark:bg-gray-900 shadow-sm border-b dark:border-gray-700">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center fade-in">
+        <span class="text-xl font-bold text-indigo-600 dark:text-indigo-400">Sisca Library</span>
+        <button id="menu-btn" class="md:hidden text-gray-700 dark:text-gray-200 focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+        <nav id="nav-links" class="hidden md:flex gap-6 font-medium text-base">
+          <a href="index.html" class="hover:text-indigo-600 dark:hover:text-indigo-300 transition">Home</a>
+          <a href="about.html" class="hover:text-indigo-600 dark:hover:text-indigo-300 transition">About</a>
+          <a href="buku.html" class="hover:text-indigo-600 dark:hover:text-indigo-300 transition">Book</a>
+          <a href="event.html" class="hover:text-indigo-600 dark:hover:text-indigo-300 transition">Event</a>
+          <a href="contack.html" class="hover:text-indigo-600 dark:hover:text-indigo-300 transition">Contack</a>
+          <a href="Homework.html" class="hover:text-indigo-600 dark:hover:text-indigo-300 transition">Homework</a>
+        </nav>
+      </div>
+      <div id="mobile-nav" class="md:hidden hidden px-6 pb-4 space-y-2 font-medium text-base">
+        <a href="index.html" class="block hover:text-indigo-600 dark:hover:text-indigo-300">Home</a>
+        <a href="about.html" class="block hover:text-indigo-600 dark:hover:text-indigo-300">About</a>
+        <a href="buku.html" class="block hover:text-indigo-600 dark:hover:text-indigo-300">Book</a>
+        <a href="event.html" class="block hover:text-indigo-600 dark:hover:text-indigo-300">Event</a>
+        <a href="contack.html" class="block hover:text-indigo-600 dark:hover:text-indigo-300">Contack</a>
+        <a href="Homework.html" class="block hover:text-indigo-600 dark:hover:text-indigo-300">Homework</a>
+      </div>
+    </header>
+    <main class="flex-1 flex items-center justify-center px-4 md:px-6 py-12 bg-gray-50 dark:bg-gray-900">
+      <section class="bg-white dark:bg-gray-800 rounded-xl shadow-lg max-w-4xl w-full p-8 md:p-12">
+        <h1 class="text-4xl font-extrabold mb-6 text-center text-blue-900 dark:text-blue-300">
+          About Sisca Library
+        </h1>
+        <p class="text-lg text-gray-700 dark:text-gray-200 leading-relaxed">
+          Sisca Library is dedicated to providing a welcoming space for
+          readers and learners of all ages. Our mission is to foster a love of
+          reading and lifelong learning through a diverse collection of books
+          and community events.
+        </p>
+        <p class="mt-4 text-gray-700 dark:text-gray-200 leading-relaxed">
+          We offer a wide range of resources, including books, digital media,
+          and educational programs designed to support the community's
+          learning and growth.
+        </p>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-indigo-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 py-4 mt-8">
+      <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+        <p class="text-xs text-center md:text-left">
+          &copy; 2024 Sisca Library. All rights reserved.
+        </p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Theme Toggle & Mobile Menu -->
+  <script>
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileNav = document.getElementById("mobile-nav");
+
+    menuBtn.addEventListener("click", () => {
+      mobileNav.classList.toggle("hidden");
+    });
+  </script>
+</body>
+
+</html>

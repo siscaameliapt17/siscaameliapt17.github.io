@@ -1,242 +1,311 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Sisca Library</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradasi ungu dan biru */
-            color: white;
-        }
+      body {
+        font-family: "Inter", sans-serif;
+      }
 
-        header, footer {
-            background-color: #3a3a3a; /* Warna abu-abu gelap untuk header */
-            color: white;
-            padding: 15px;
-            text-align: center;
-        }
+      /* Animation for fade-in */
+      .fade-in {
+        opacity: 0;
+        animation: fadeIn 1.5s forwards;
+      }
 
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 50px;
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
         }
+      }
 
-        nav {
-            display: flex;
-            gap: 20px;
-        }
+      /* Animation for sliding */
+      .slide-in {
+        transform: translateX(100%);
+        animation: slideIn 0.5s ease-out forwards;
+      }
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 10px 15px;
-            display: inline-block;
-            background-color: rgba(255, 255, 255, 0.2);
-            border-radius: 5px;
-            transition: all 0.3s;
+      @keyframes slideIn {
+        to {
+          transform: translateX(0);
         }
+      }
 
-        nav a:hover {
-            background-color: #facc15;
-            color: black;
-        }
+      /* Scroll animation */
+      .scroll-animate {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: scrollAnim 1s ease-out forwards;
+      }
 
-        .container {
-            width: 60%;
-            background-color: rgba(255, 255, 255, 0.2);
-            margin: 50px auto;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+      @keyframes scrollAnim {
+        to {
+          opacity: 1;
+          transform: translateY(0);
         }
-
-        h2 {
-            text-align: center;
-            color: #facc15; /* Warna kuning terang untuk heading */
-        }
-
-        p {
-            text-align: justify;
-            color: #333;
-            font-size: 16px;
-            line-height: 1.6;
-        }
-
-        .button-container {
-            text-align: center;
-            margin-top: 30px;
-        }
-
-        .button-container a {
-            background-color: #15803d;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-        }
-
-        .button-container a:hover {
-            background-color: #facc15;
-            color: black;
-        }
-
-        /* Dark Mode Styles */
-        .dark-mode {
-            background-color: #333;
-            color: white;
-        }
-
-        .dark-mode .container {
-            background-color: #444;
-        }
-
-        .dark-mode header, .dark-mode footer {
-            background-color: #0a5025;
-        }
-
-        /* Dark Mode Button */
-        #darkModeToggle {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #15803d;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        #darkModeToggle:hover {
-            background-color: #0a5025;
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
 
-<header>
-    <h1>Sisca Library</h1>
-    <nav>
-        <a href="index.html">Beranda</a>
-        <a href="aboutme.html">Seputar Kami</a>
-        <a href="contactus.html">Tanggapan</a>
-        <a href="index.html">Hello World</a>
-        </body>
-</html>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Halo World</title>
-</head>
-<body>
-    <h1>Hello World!</h1>
-</body>
-</html>
-<table border="1">
-    <tr>
-        <th>Nama</th>
-        <th>Umur</th>
-    </tr>
-    <tr>
-        <td>Budi</td>
-        <td>20</td>
-    </tr>
-    <tr>
-        <td>Siti</td>
-        <td>21</td>
-    </tr>
-</table>
-<a href="https://www.usu.ac.id/id" target="_blank">Klik link disini untuk mengunjungi situs Universitas Sumatera Utara</a>
-<form action="proses.php" method="POST">
-    Nama: <input type="text" name="nama"><br>
-    Email: <input type="email" name="email"><br>
-    <input type="submit" value="Kirim">
-</form>
-<?php
-$host = "localhost";
-$user = "root";
-$pass = "";
-$db   = "nama_database";
+  <body
+    class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300"
+  >
+    <div class="min-h-screen flex flex-col">
+      <!-- Navbar -->
+      <header
+        class="sticky top-0 z-50 bg-white dark:bg-gray-900 shadow-sm border-b dark:border-gray-700"
+      >
+        <div
+          class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center fade-in"
+        >
+          <span class="text-xl font-bold text-indigo-600 dark:text-indigo-400"
+            >Sisca Library</span
+          >
+          <button
+            id="menu-btn"
+            class="md:hidden text-gray-700 dark:text-gray-200 focus:outline-none"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
+          <nav
+            id="nav-links"
+            class="hidden md:flex gap-6 font-medium text-base"
+          >
+            <a
+              href="index.html"
+              class="hover:text-indigo-600 dark:hover:text-indigo-300 transition"
+              >Home</a
+            >
+            <a
+              href="about.html"
+              class="hover:text-indigo-600 dark:hover:text-indigo-300 transition"
+              >About</a
+            >
+            <a
+              href="buku.html"
+              class="hover:text-indigo-600 dark:hover:text-indigo-300 transition"
+              >Book</a
+            >
+            <a
+              href="event.html"
+              class="hover:text-indigo-600 dark:hover:text-indigo-300 transition"
+              >Event</a
+            >
+            <a
+              href="contack.html"
+              class="hover:text-indigo-600 dark:hover:text-indigo-300 transition"
+              >Contack</a
+            >
+            <a
+              href="Homework.html"
+              class="hover:text-indigo-600 dark:hover:text-indigo-300 transition"
+              >Homework</a
+            >
+          </nav>
+        </div>
+        <div
+          id="mobile-nav"
+          class="md:hidden hidden px-6 pb-4 space-y-2 font-medium text-base"
+        >
+          <a
+            href="index.html"
+            class="block hover:text-indigo-600 dark:hover:text-indigo-300"
+            >Home</a
+          >
+          <a
+            href="about.html"
+            class="block hover:text-indigo-600 dark:hover:text-indigo-300"
+            >About</a
+          >
+          <a
+            href="buku.html"
+            class="block hover:text-indigo-600 dark:hover:text-indigo-300"
+            >Book</a
+          >
+          <a
+            href="event.html"
+            class="block hover:text-indigo-600 dark:hover:text-indigo-300"
+            >Event</a
+          >
+          <a
+            href="contack.html"
+            class="block hover:text-indigo-600 dark:hover:text-indigo-300"
+            >Contack</a
+          >
+          <a
+            href="Homework.html"
+            class="block hover:text-indigo-600 dark:hover:text-indigo-300"
+            >Homework</a
+          >
+        </div>
+      </header>
 
-$conn = mysqli_connect($host, $user, $pass, $db);
+      <!-- Hero Section -->
+      <section
+        class="relative w-full bg-cover bg-center bg-no-repeat py-24 px-6 fade-in"
+        style="
+          background-image: url('https://penerbitdeepublish.com/wp-content/uploads/2019/07/perbedaan-buku-ajar-dan-monograf-1024x538.jpg');
+        "
+      >
+        <!-- Overlay gradient -->
+        <div
+          class="absolute inset-0 bg-gradient-to-b from-black/40 to-black/60 dark:from-gray-900/50 dark:to-gray-900/80 z-0"
+        ></div>
 
-if ($conn) {
-    echo "Koneksi berhasil!";
-} else {
-    echo "Koneksi gagal: " . mysqli_connect_error();
-}
-?>
-    </nav>
-</header>
+        <!-- Content -->
+        <div class="relative z-10 max-w-4xl mx-auto text-center text-white">
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold drop-shadow-lg">
+            Welcome to Sisca Library
+          </h1>
+          <p class="mt-6 text-lg sm:text-xl drop-shadow-md">
+            Your gateway to knowledge and learning. Explore our collection,
+            events, and resources.
+          </p>
+        </div>
+      </section>
 
-<div class="container">
-    <h2>Selamat Datang di Sisca Library!</h2>
-    <p>Halo! Saya <b>Sisca Amelia Putri</b>. Saya merupakan mahasiswa Program Studi Perpustakaan dan Sains Informasi di Universitas Sumatera Utara. Sebagai bagian dari perjalanan akademik saya, saya mengerjakan sebuah proyek website ini sebagai bagian dari pemenuhan tugas Mata Kuliah Pengembangan Web. Melalui proyek ini, saya berkesempatan untuk mempelajari dan mengaplikasikan berbagai keterampilan teknis, seperti HTML, CSS, serta teknologi web lainnya, yang mendukung pembelajaran saya dalam mengembangkan aplikasi berbasis web. Website ini juga menjadi sarana untuk mengasah kemampuan saya dalam mendesain dan menyusun platform digital yang bermanfaat.</p>
-    
-    <div class="button-container">
-        <a href="https://library.usu.ac.id/" target="_blank">Kunjungi Perpustakaan USU</a>
+      <!-- Main Content -->
+      <section
+        class="mt-20 grid grid-cols-1 md:grid-cols-3 gap-12 text-gray-900 dark:text-gray-100 max-w-6xl mx-auto px-6"
+      >
+        <div
+          class="bg-white dark:bg-gray-800 rounded-xl p-10 shadow-xl hover:shadow-2xl transition duration-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="mx-auto mb-6 h-20 w-20 text-blue-700 dark:text-blue-500"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M12 6v6l4 2"
+            />
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3 6h18M3 6a2 2 0 012-2h14a2 2 0 012 2v12a2 2 0 01-2 2H5a2 2 0 01-2-2V6z"
+            />
+          </svg>
+          <h3 class="text-3xl font-bold mb-3 text-center">Books</h3>
+          <p class="text-center text-gray-700 dark:text-gray-300">
+            Discover a wide range of books across genres and topics.
+          </p>
+          <a
+            href="buku.html"
+            class="block mt-6 text-center text-blue-700 dark:text-blue-500 font-semibold hover:underline"
+            >View Books</a
+          >
+        </div>
+
+        <div
+          class="bg-white dark:bg-gray-800 rounded-xl p-10 shadow-xl hover:shadow-2xl transition duration-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="mx-auto mb-6 h-20 w-20 text-blue-700 dark:text-blue-500"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2v-5a2 2 0 00-2-2H5a2 2 0 00-2 2v5a2 2 0 002 2z"
+            />
+          </svg>
+          <h3 class="text-3xl font-bold mb-3 text-center">Events</h3>
+          <p class="text-center text-gray-700 dark:text-gray-300">
+            Join our upcoming events and workshops for all ages.
+          </p>
+          <a
+            href="event.html"
+            class="block mt-6 text-center text-blue-700 dark:text-blue-500 font-semibold hover:underline"
+            >View Events</a
+          >
+        </div>
+
+        <div
+          class="bg-white dark:bg-gray-800 rounded-xl p-10 shadow-xl hover:shadow-2xl transition duration-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="mx-auto mb-6 h-20 w-20 text-blue-700 dark:text-blue-500"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M12 6v6l4 2"
+            />
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3 6h18M3 6a2 2 0 012-2h14a2 2 0 012 2v12a2 2 0 01-2 2H5a2 2 0 01-2-2V6z"
+            />
+          </svg>
+          <h3 class="text-3xl font-bold mb-3 text-center">Homework</h3>
+          <p class="text-center text-gray-700 dark:text-gray-300">
+            Access resources and materials to help with your homework.
+          </p>
+          <a
+            href="homework.html"
+            class="block mt-6 text-center text-blue-700 dark:text-blue-500 font-semibold hover:underline"
+            >View Homework</a
+          >
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer
+        class="bg-indigo-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 py-4 mt-8"
+      >
+        <div
+          class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center"
+        >
+          <p class="text-xs text-center md:text-left">
+            &copy; 2024 Sisca Library. All rights reserved.
+          </p>
+        </div>
+      </footer>
     </div>
-</div>
-    <div>
-        <p>Waktu saat ini: <span id="currentTime"></span></p>
-    </div>
 
-<footer>
-    &copy; 2025 Sisca Library
-    
-</footer>
+    <!-- Theme Toggle & Mobile Menu -->
+    <script>
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileNav = document.getElementById("mobile-nav");
 
-<script>
-    function showTime() {
-        const timeElement = document.getElementById("currentTime");
-        const currentTime = new Date();
-        timeElement.innerHTML = currentTime.toLocaleTimeString();
-    }
-
-    setInterval(showTime, 1000); // Memperbarui setiap detik
-</script>
-    <a href="#">🌐 Hello World</a>
-    <a href="#">👨‍🏫 Data Dosen</a>
-  </nav>
-
-  <div class="container">
-    <h2>Hello World</h2>
-    <p>Ini adalah halaman Hello World pertama saya!</p>
-
-    <h3>Tabel</h3>
-    <table>
-      <tr>
-        <th>Nama</th>
-        <th>Usia</th>
-        <th>Kota</th>
-      </tr>
-      <tr>
-        <td>Andi</td>
-        <td>25</td>
-        <td>Medan</td>
-      </tr>
-      <tr>
-        <td>Budi</td>
-        <td>30</td>
-        <td>Jakarta</td>
-      </tr>
-    </table>
-
-    <h3>Link</h3>
-    <p>Klik <a href="https://www.usu.ac.id" target="_blank">di sini</a> untuk ke situs Universitas Sumatera Utara.</p>
-  </div>
-
-  <footer>
-    ©️ 2025 Perpustakaan Sisca
-  </footer>
-
-</body>
+      menuBtn.addEventListener("click", () => {
+        mobileNav.classList.toggle("hidden");
+      });
+    </script>
+  </body>
 </html>
